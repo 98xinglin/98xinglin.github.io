@@ -2,9 +2,135 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>真不错</title>
+    <title>轮播图</title>
+    <style>
+        /* 去除内边距，没有链接下划线  */
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+
+        /*让body有20px的内边距*/
+        body {
+            padding: 20px;
+        }
+
+        /*最外围的div*/
+        #container {
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+            /*相对定位*/
+            position: relative;
+            margin: 0 auto;
+        }
+
+        /*    包含所有图片的<div>*/
+        #list {
+            width: 4200px;
+            height: 400px;
+            /*绝对定位  子绝父相  */
+            position: absolute;
+            z-index: 1;
+        }
+
+        #list img {
+            /*浮在左侧*/
+            float: left;
+        }
+
+        /*  包含所有原点按钮的<div>*/
+        #pointsDiv {
+            position: absolute;
+            height: 10px;
+            width: 100px;
+            z-index: 2;
+            bottom: 20px;
+            left: 250px;
+        }
+
+        /*所有的圆点<span>*/
+        #pointsDiv span {
+            cursor: pointer;
+            float: left;
+            border: 1px solid #fff;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #333;
+            margin-right: 5px;
+        }
+
+        /*    第一个<span>*/
+        #pointsDiv .on {
+            background: orangered;
+        }
+
+        /*切换图标a*/
+        .arrow {
+            cursor: pointer;
+            display: none;
+            line-height: 39px;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            z-index: 2;
+            top: 180px;
+            background-color: RGBA(0, 0, 0, 0.3);
+            color: #fff;
+        }
+
+        /*鼠标移到切换图标上时*/
+        .arrow:hover {
+            background-color: RGBA(0, 0, 0, 0.7);
+        }
+
+        /*鼠标一道整个div区域时*/
+        #container:hover .arrow {
+            /*显示*/
+            display: block;
+        }
+
+        /*上一个切换图标的做外边距*/
+        #prev {
+            left: 20px;
+        }
+
+
+        #next {
+            right: 20px;
+        }
+    </style>
 </head>
 <body>
-<h1 style="color: deeppink">给给，真不错！</h1>
+<div id="container">
+    <div id="list" style="left: -600px">
+        <img src="img/05.jpg" alt="5">
+        <img src="img/01.jpg" alt="1">
+        <img src="img/02.jpg" alt="2">
+        <img src="img/03.jpg" alt="3">
+        <img src="img/04.jpg" alt="4">
+        <img src="img/05.jpg" alt="5">
+        <img src="img/01.jpg" alt="1">
+    </div>
+    <div id="pointsDiv">
+        <span index="1" class="on"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+        <span index="5"></span>
+    </div>
+    <a class="arrow" href="javascript:;" id="prev"><</a>
+    <a class="arrow" href="javascript:;" id="next">></a>
+
+</div>
+
+
+<script type="text/javascript" src="s../js/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
