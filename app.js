@@ -5,8 +5,8 @@ $(function () {
     var $pre = $('#prev')
     var $next = $('#next')
     var PAGE_WIDTH = 600   //一页宽度
-    var TIME = 400   //翻页的持续时间
-    var ITEM_TIME = 20  //单元移动的间隔时间
+    var TIME = 600   //翻页的持续时间
+    var ITEM_TIME = 30  //单元移动的间隔时间
     var imgCount = $points.length
     var index = 0
     var moving = false   //未翻页设为false
