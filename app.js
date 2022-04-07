@@ -27,7 +27,7 @@ $(function () {
 
     var intervalId = setInterval(function () {
         nextPage(true)
-    }, 1000)
+    }, 1500)
 
     //当鼠标进入图片区域时，自动切换停止，当鼠标离开，又开始自动切换
 
@@ -37,7 +37,7 @@ $(function () {
     }, function () {
         intervalId = setInterval(function () {
             nextPage(true)
-        }, 1000)
+        }, 1500)
     })
 
     //点击圆点图标切换到对应得页
